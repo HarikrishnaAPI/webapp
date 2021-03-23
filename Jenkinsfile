@@ -14,7 +14,9 @@ pipeline {
     }
     
     stage ("Buid") {
+      stage {
       sh "mvn clean package" 
+    }
     }
     
   }
