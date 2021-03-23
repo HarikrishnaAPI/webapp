@@ -1,10 +1,10 @@
 pipeline {
   agent any
   tools {
-    maven "maven"
+    maven 'maven'
   }
   stages {
-    stage ("initialize") {
+    stage ('initialize') {
       steps {
         sh '''
                     echo "PATH = ${PATH}"
@@ -13,9 +13,9 @@ pipeline {
       }  
     }
     
-    stage ("Buid") {
-      stage {
-      sh "mvn clean package" 
+    stage ('Buid') {
+      steps {
+      sh 'mvn clean package'
     }
     }
     
