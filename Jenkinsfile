@@ -27,7 +27,6 @@ pipeline {
         sh 'bash owasp-dependency-check.sh'
       
       }
-    
     }
     stage ('Build') {
       steps {
