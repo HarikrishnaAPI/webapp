@@ -21,6 +21,7 @@ pipeline {
     }
     stage ('sast') {
       steps {
+        sh 'rm sonarqube || true'
         withsonarqube('sonar') {
         sh 'mvn sonar:sonar'
         }
