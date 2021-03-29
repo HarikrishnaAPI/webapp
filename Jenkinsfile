@@ -23,7 +23,7 @@ pipeline {
       steps {
         withsonarqube('sonar') {
         sh 'mvn sonar:sonar'
-        sh 'cat target/sonar/report-task.txt'
+        sh 'cat var/target/sonar/report-task.txt'
         }
       }
     }
