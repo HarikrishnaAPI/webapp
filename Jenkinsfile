@@ -19,10 +19,9 @@ pipeline {
         sh 'cat trufflehog'
       }
     }
-    stage ('sast') {
+    stage ('SAST') {
       steps {
-        sh 'rm sonarqube || true'
-        withSonarQube('sonar') {
+        withSonarQubeEnv('sonar') {
         sh 'mvn sonar:sonar'
         sh 'cat target/sonar/report-task.txt'
         }
