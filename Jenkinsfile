@@ -22,8 +22,9 @@ pipeline {
     stage ('sast') {
       steps {
         sh 'rm sonarqube || true'
-        withsonarqube('sonar') {
+        withSonarQube('sonar') {
         sh 'mvn sonar:sonar'
+        sh 'cat target/sonar/report-task.txt'
         }
       }
     }
